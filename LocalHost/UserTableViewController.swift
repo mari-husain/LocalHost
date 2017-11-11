@@ -19,6 +19,9 @@ class UserTableViewController: UITableViewController {
         // load in the sample data
         loadSampleUsers()
         
+        // load in users from the localhost server
+        loadUsersFromLocalhost()
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -120,6 +123,23 @@ class UserTableViewController: UITableViewController {
         }
         
         users += [user1, user2, user3]
+    }
+    
+    private func loadUsersFromLocalhost() {
+        
+        // get the data from the following URL
+        let urlString = "http://localhost:5000/localhost/api/v0.1/users/1"
+        
+        guard let requestUrl = URL(string: urlString) else { return }
+        let request = URLRequest(url: requestUrl)
+        let task = URLSession.shared.dataTask(with: request) {
+            (data, response, error) in
+            if error == nil,let usableData = data {
+                print(usableData) //JSONSerialization
+            }
+        }
+        
+        task.resume()
     }
 
 }

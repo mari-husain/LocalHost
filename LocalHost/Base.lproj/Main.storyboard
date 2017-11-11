@@ -8,6 +8,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -162,22 +163,28 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="My Listed Items" id="ghl-yI-1Mu">
-                        <barButtonItem key="leftBarButtonItem" title="User" id="OE5-5V-Fze"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ka8-5R-3md">
-                            <connections>
-                                <segue destination="RKu-0L-y8n" kind="presentation" identifier="AddItem" id="YvI-Sf-1kT"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="Ka8-5R-3md">
+                                <connections>
+                                    <segue destination="RKu-0L-y8n" kind="presentation" identifier="AddItem" id="YvI-Sf-1kT"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="User" id="OE5-5V-Fze">
+                                <connections>
+                                    <segue destination="S5J-Ak-2kS" kind="show" identifier="ShowUsers" id="IzA-Bn-hYQ"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BZR-sO-hMN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="212" y="138.98050974512745"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Users-->
         <scene sceneID="h5I-Fx-c17">
             <objects>
-                <tableViewController id="S5J-Ak-2kS" sceneMemberID="viewController">
+                <tableViewController id="S5J-Ak-2kS" customClass="UserTableViewController" customModule="LocalHost" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="cpY-QK-7MV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -226,10 +233,11 @@
                             <outlet property="delegate" destination="S5J-Ak-2kS" id="Qbj-Lm-ync"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Users" id="mky-wU-H2P"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0WT-3B-iHV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="212" y="-562.66866566716647"/>
+            <point key="canvasLocation" x="212" y="-563"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ONl-GM-7wh">

@@ -146,6 +146,9 @@ class ItemTableViewController: UITableViewController {
             
             let selectedItem = items[indexPath.row]
             itemDetailViewController.item = selectedItem
+        case "ShowUsers":
+            // do nothing
+            os_log("Showing users.", log: OSLog.default, type: .debug)
         default:
             fatalError("Unexpected Segue Identifier; \(segue.identifier)")
         }

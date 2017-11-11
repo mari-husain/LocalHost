@@ -8,15 +8,18 @@ auth = HTTPBasicAuth()
 users = [
 	{
 		'id': 1,
-		'username': u'Mari'
+		'name': u'Mari',
+		'location': u'Denver'
 	},
 	{
 		'id': 2,
-		'username': u'Eric'
+		'name': u'Eric',
+		'location': u'LA'
 	},
 	{
 		'id': 3,
-		'username': u'Andrew'
+		'name': u'Andrew',
+		'location': u'Palo Alto'
 	}
 ]
 
@@ -76,11 +79,12 @@ def get_users():
 @app.route('/localhost/api/v0.1/users', methods=['POST'])
 @auth.login_required
 def create_user():
-	if not request.json or not 'username' in request.json:
+	if not request.json or not 'name' in request.json or not 'location' in request.json:
 		abort(400)
 	user = {
 		'id': users[-1]['id'] + 1,
-		'username': request.json['username']
+		'name': request.json['name'],
+		'location': request.json['location']
 	}
 	users.append(user)
 	return jsonify({'user': make_public_user(user)}), 201
@@ -94,9 +98,14 @@ def update_user(user_id):
 		abort(400)
 	if not request.json:
 		abort(400)
-	if 'username' in request.json and type(request.json['username']) != str:
-		abort(400)
-	user[0]['username'] = request.json.get('username', user[0]['username'])
+	if 'name' in request.json: 
+		if type(request.json['name']) != str:
+			abort(400) 
+		user[0]['name'] = request.json.get('name', user[0]['name'])
+	if 'location' in request.json:
+		if type(request.json['location']) != str:
+			user[0]['location'] = request.json.get('location', user[0]['location'])
+
 	return jsonify({'user': make_public_user(user[0])})
 
 # delete an existing user
@@ -111,7 +120,7 @@ def delete_user():
 
 # get user by user id
 @app.route('/localhost/api/v0.1/users/<int:user_id>', methods=['GET'])
-@auth.login_required
+#@auth.login_required
 def get_user(user_id):
 	user = [user for user in users if user['id'] == user_id] # get user by user id
 	if len(user) == 0:
