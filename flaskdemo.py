@@ -53,10 +53,14 @@ def unauthorized():
 # Error Handling
 # #
 
-# map 404 response to error JSON
+# map a 404 not found response to error message JSON
 @app.errorhandler(404)
 def not_found(error):
 	return make_response(jsonify({'error': 'Not Found'}), 404)
+
+# map a 403 unauthorized access response to error message JSON
+def unauthorized():
+	return make_response(jsonify({'error: Unauthorized access'}), 403)
 
 # #
 # Mappings of urls to functions
