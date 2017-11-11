@@ -8,11 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		4C2BBE6B1F9900DD0066E661 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2BBE6A1F9900DD0066E661 /* AppDelegate.swift */; };
-		4C2BBE6D1F9900DD0066E661 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2BBE6C1F9900DD0066E661 /* ViewController.swift */; };
+		4C2BBE6D1F9900DD0066E661 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2BBE6C1F9900DD0066E661 /* ItemViewController.swift */; };
 		4C2BBE701F9900DE0066E661 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C2BBE6E1F9900DE0066E661 /* Main.storyboard */; };
 		4C2BBE721F9900DE0066E661 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C2BBE711F9900DE0066E661 /* Assets.xcassets */; };
 		4C2BBE751F9900DE0066E661 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C2BBE731F9900DE0066E661 /* LaunchScreen.storyboard */; };
 		4C2BBE801F9900DE0066E661 /* LocalHostTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2BBE7F1F9900DE0066E661 /* LocalHostTests.swift */; };
+		4C2BBE8B1F9971250066E661 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2BBE8A1F9971250066E661 /* Item.swift */; };
+		4C2BBE8D1F9984970066E661 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2BBE8C1F9984970066E661 /* ItemTableViewCell.swift */; };
+		4C2BBE8F1FA3BF8E0066E661 /* ItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2BBE8E1FA3BF8E0066E661 /* ItemTableViewController.swift */; };
+		4CA657E61FB6BCFE0025EDA1 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA657E51FB6BCFE0025EDA1 /* UserTableViewCell.swift */; };
+		4CA657E81FB6C18E0025EDA1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA657E71FB6C18E0025EDA1 /* User.swift */; };
+		4CA657EA1FB6C33F0025EDA1 /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA657E91FB6C33F0025EDA1 /* UserTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +34,7 @@
 /* Begin PBXFileReference section */
 		4C2BBE671F9900DD0066E661 /* LocalHost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocalHost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C2BBE6A1F9900DD0066E661 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4C2BBE6C1F9900DD0066E661 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4C2BBE6C1F9900DD0066E661 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		4C2BBE6F1F9900DE0066E661 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4C2BBE711F9900DE0066E661 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C2BBE741F9900DE0066E661 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +42,12 @@
 		4C2BBE7B1F9900DE0066E661 /* LocalHostTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocalHostTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C2BBE7F1F9900DE0066E661 /* LocalHostTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalHostTests.swift; sourceTree = "<group>"; };
 		4C2BBE811F9900DE0066E661 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C2BBE8A1F9971250066E661 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		4C2BBE8C1F9984970066E661 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
+		4C2BBE8E1FA3BF8E0066E661 /* ItemTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTableViewController.swift; sourceTree = "<group>"; };
+		4CA657E51FB6BCFE0025EDA1 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserTableViewCell.swift; path = ../UserTableViewCell.swift; sourceTree = "<group>"; };
+		4CA657E71FB6C18E0025EDA1 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		4CA657E91FB6C33F0025EDA1 /* UserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,11 +90,18 @@
 			isa = PBXGroup;
 			children = (
 				4C2BBE6A1F9900DD0066E661 /* AppDelegate.swift */,
-				4C2BBE6C1F9900DD0066E661 /* ViewController.swift */,
+				4C2BBE6C1F9900DD0066E661 /* ItemViewController.swift */,
+				4C2BBE8A1F9971250066E661 /* Item.swift */,
+				4C2BBE8C1F9984970066E661 /* ItemTableViewCell.swift */,
+				4C2BBE8E1FA3BF8E0066E661 /* ItemTableViewController.swift */,
+				4CA657E71FB6C18E0025EDA1 /* User.swift */,
+				4CA657E51FB6BCFE0025EDA1 /* UserTableViewCell.swift */,
+				4CA657E91FB6C33F0025EDA1 /* UserTableViewController.swift */,
 				4C2BBE6E1F9900DE0066E661 /* Main.storyboard */,
 				4C2BBE711F9900DE0066E661 /* Assets.xcassets */,
 				4C2BBE731F9900DE0066E661 /* LaunchScreen.storyboard */,
 				4C2BBE761F9900DE0066E661 /* Info.plist */,
+				4CA657E11FB6B2C40025EDA1 /* External Assets */,
 			);
 			path = LocalHost;
 			sourceTree = "<group>";
@@ -94,6 +113,13 @@
 				4C2BBE811F9900DE0066E661 /* Info.plist */,
 			);
 			path = LocalHostTests;
+			sourceTree = "<group>";
+		};
+		4CA657E11FB6B2C40025EDA1 /* External Assets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "External Assets";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,6 +172,7 @@
 				TargetAttributes = {
 					4C2BBE661F9900DD0066E661 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = DH25MDGZN9;
 						ProvisioningStyle = Automatic;
 					};
 					4C2BBE7A1F9900DE0066E661 = {
@@ -199,8 +226,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C2BBE6D1F9900DD0066E661 /* ViewController.swift in Sources */,
+				4C2BBE8F1FA3BF8E0066E661 /* ItemTableViewController.swift in Sources */,
+				4C2BBE8D1F9984970066E661 /* ItemTableViewCell.swift in Sources */,
+				4C2BBE6D1F9900DD0066E661 /* ItemViewController.swift in Sources */,
+				4C2BBE8B1F9971250066E661 /* Item.swift in Sources */,
+				4CA657E61FB6BCFE0025EDA1 /* UserTableViewCell.swift in Sources */,
 				4C2BBE6B1F9900DD0066E661 /* AppDelegate.swift in Sources */,
+				4CA657EA1FB6C33F0025EDA1 /* UserTableViewController.swift in Sources */,
+				4CA657E81FB6C18E0025EDA1 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +372,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = DH25MDGZN9;
 				INFOPLIST_FILE = LocalHost/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.LocalHost;
@@ -351,6 +385,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = DH25MDGZN9;
 				INFOPLIST_FILE = LocalHost/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.LocalHost;
@@ -406,6 +441,7 @@
 				4C2BBE861F9900DE0066E661 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4C2BBE871F9900DE0066E661 /* Build configuration list for PBXNativeTarget "LocalHostTests" */ = {
 			isa = XCConfigurationList;
@@ -414,6 +450,7 @@
 				4C2BBE891F9900DE0066E661 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
