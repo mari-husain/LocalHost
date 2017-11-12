@@ -16,9 +16,6 @@ class UserTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // load in the sample data
-        loadSampleUsers()
         
         // load in users from the localhost server
         loadUsersFromLocalhost()
@@ -126,6 +123,7 @@ class UserTableViewController: UITableViewController {
         users += [user1, user2, user3]
     }
     
+    // request the list of users from the API and parse them into User objects.
     private func loadUsersFromLocalhost() {
         
         // get the data from the following URL
@@ -134,9 +132,19 @@ class UserTableViewController: UITableViewController {
         let url = URL(string: urlString)!
         let jsonData = try! Data(contentsOf: url)
         
+        /* parse the JSON data we receive back from the API.
+         
+         User data is of the form:
+         {
+            "users": [
+                {
+                    "location": "New York",
+                    "name": "Mari",
+                    "uri": "http://localhost:5000/localhost/api/v0.1/users/1"
+                }
+            ]
+         } */
         if let root = try? JSONSerialization.jsonObject(with: jsonData, options: .allowFragments) as? [String: Any] {
-            //print(root)
-            
             if let usersList = root?["users"] as? [[String: Any]] {
                 for rawUser in usersList {
                     if let name = rawUser["name"] as? String, let location = rawUser["location"] as? String {
