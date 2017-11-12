@@ -9,7 +9,7 @@ users = [
 	{
 		'id': 1,
 		'name': u'Mari',
-		'location': u'Denver'
+		'location': u'New York'
 	},
 	{
 		'id': 2,
@@ -71,7 +71,7 @@ def unauthorized():
 
 # get a list of all users
 @app.route('/localhost/api/v0.1/users', methods=['GET'])
-@auth.login_required
+#@auth.login_required
 def get_users():
 	return jsonify({'users': [make_public_user(user) for user in users]})
 

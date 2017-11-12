@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 class UserTableViewController: UITableViewController {
 
@@ -128,18 +129,31 @@ class UserTableViewController: UITableViewController {
     private func loadUsersFromLocalhost() {
         
         // get the data from the following URL
-        let urlString = "http://localhost:5000/localhost/api/v0.1/users/1"
+        let urlString = "http://localhost:5000/localhost/api/v0.1/users"
         
-        guard let requestUrl = URL(string: urlString) else { return }
-        let request = URLRequest(url: requestUrl)
-        let task = URLSession.shared.dataTask(with: request) {
-            (data, response, error) in
-            if error == nil,let usableData = data {
-                print(usableData) //JSONSerialization
+        let url = URL(string: urlString)!
+        let jsonData = try! Data(contentsOf: url)
+        
+        if let root = try? JSONSerialization.jsonObject(with: jsonData, options: .allowFragments) as? [String: Any] {
+            //print(root)
+            
+            if let usersList = root?["users"] as? [[String: Any]] {
+                for rawUser in usersList {
+                    print(rawUser)
+                }
             }
         }
-        
-        task.resume()
+    }
+    
+    private func convertToDictionary(text: String) -> [String: Any]? {
+        if let data = text.data(using: .utf8) {
+            do {
+                return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+        return nil
     }
 
 }

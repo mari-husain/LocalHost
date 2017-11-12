@@ -25,4 +25,16 @@ class User: NSObject {
         self.name = name
         self.location = location
     }
+    
+    // initialize a user object from JSON
+    init?(json: [String: Any]) {
+        guard let name = json["name"] as? String,
+            let location = json["location"] as? String
+        else {
+            return nil
+        }
+        
+        self.name = name
+        self.location = location
+    }
 }
