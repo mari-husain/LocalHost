@@ -139,7 +139,11 @@ class UserTableViewController: UITableViewController {
             
             if let usersList = root?["users"] as? [[String: Any]] {
                 for rawUser in usersList {
-                    print(rawUser)
+                    if let name = rawUser["name"] as? String, let location = rawUser["location"] as? String {
+                        if let user = User(name: name, location: location) {
+                            self.users.append(user)
+                        }
+                    }
                 }
             }
         }
