@@ -144,6 +144,7 @@ class UserTableViewController: UITableViewController {
                 }
             ]
          } */
+        
         if let root = try? JSONSerialization.jsonObject(with: jsonData, options: .allowFragments) as? [String: Any] {
             if let usersList = root?["users"] as? [[String: Any]] {
                 for rawUser in usersList {

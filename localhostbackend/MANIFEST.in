@@ -1,0 +1,5 @@
+from localhostbackend import app
+
+graft localhostbackend/templates
+graft localhostbackend/static
+include localhostbackend/schema.sql

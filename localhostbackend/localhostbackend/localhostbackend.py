@@ -1,10 +1,36 @@
 #!flask/bin/python
+import os
+import sqlite3
 from flask import Flask, jsonify, abort, make_response, url_for, request
+from flask import request, session, g, redirect, abort, render_template, flash 
 from flask_httpauth import HTTPBasicAuth
 
-app = Flask(__name__)
-auth = HTTPBasicAuth()
+app = Flask(__name__) # create the application instance
+auth = HTTPBasicAuth() # a simple authentication tool
 
+app.config.from_object(__name__) # load configs from this file - localhostbackend.py
+
+
+# #
+# Database methods
+# #
+
+# load default configs and override configs from an environment variable
+app.config.update(dict(
+	DATABASE = os.path.join(app.root_path, 'localhostbackend.db'),
+	SECRET_KEY = 'imasecretkey',
+	USERNAME = 'admin',
+	PASSWORD = 'default2'
+))
+app.config.from_envvar('LOCALHOST_SETTINGS', silent = True)
+
+# connect to the specific databse
+def connect_db():
+	rv = sqlite3.connect(app.config['DATABASE'])
+	rv.row_factory = sqlite3.Row 
+	return rv
+
+# in lieu of a database, we will define a static array of users for now.
 users = [
 	{
 		'id': 1,

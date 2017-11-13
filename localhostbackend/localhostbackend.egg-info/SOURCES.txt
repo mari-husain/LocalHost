@@ -1,0 +1,10 @@
+MANIFEST.in
+localhostbackend/__init__.py
+localhostbackend/localhostbackend.py
+localhostbackend/schema.sql
+localhostbackend.egg-info/PKG-INFO
+localhostbackend.egg-info/SOURCES.txt
+localhostbackend.egg-info/dependency_links.txt
+localhostbackend.egg-info/requires.txt
+localhostbackend.egg-info/top_level.txt
+localhostbackend/static/.DS_Store
